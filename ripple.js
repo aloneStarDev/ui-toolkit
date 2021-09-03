@@ -10,14 +10,11 @@ function createRipple(event) {
     circle.style.top = `${event.clientY - element.offsetTop - radius}px`;
     circle.classList.add("ripple");
 
-    const ripple = element.getElementsByClassName("ripple")[0];
-
-
     element.appendChild(circle);
     setTimeout(() => {
         circle.remove()
     }, 1000)
 }
-document.querySelectorAll("[data-effect='ripple']").forEach(el => {
+document.querySelectorAll('[data-effect="ripple"]').forEach(el => {
     el.addEventListener("click", createRipple);
 })
